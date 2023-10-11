@@ -60,13 +60,13 @@ model Chapter {
   updatedAt   DateTime @updatedAt
 
   course       Course         @relation(fields: [courseId], references: [id], onDelete: Cascade)
-  muxData      muxData?
+  muxData      MuxData?
   userProgress UserProgress[]
 
   @@index([courseId])
 }
 
-model muxData {
+model MuxData {
   id         String  @id @default(uuid())
   chapterId  String  @unique
   assetId    String
