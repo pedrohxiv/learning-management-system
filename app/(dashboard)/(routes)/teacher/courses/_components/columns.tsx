@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Course } from "@prisma/client";
 import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUp, ArrowDown, Pencil } from "lucide-react";
+import { Pencil, ArrowUpDown } from "lucide-react";
 import Link from "next/link";
 
 export const columns: ColumnDef<Course>[] = [
@@ -19,11 +19,7 @@ export const columns: ColumnDef<Course>[] = [
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
             Title
-            {column.getIsSorted() === "asc" ? (
-              <ArrowUp className="ml-2 h-4 w-4" />
-            ) : (
-              <ArrowDown className="ml-2 h-4 w-4" />
-            )}
+            <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         </div>
       );
@@ -42,11 +38,7 @@ export const columns: ColumnDef<Course>[] = [
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
             Price
-            {column.getIsSorted() === "asc" ? (
-              <ArrowUp className="ml-2 h-4 w-4" />
-            ) : (
-              <ArrowDown className="ml-2 h-4 w-4" />
-            )}
+            <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         </div>
       );
@@ -71,11 +63,7 @@ export const columns: ColumnDef<Course>[] = [
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
             Published
-            {column.getIsSorted() === "asc" ? (
-              <ArrowUp className="ml-2 h-4 w-4" />
-            ) : (
-              <ArrowDown className="ml-2 h-4 w-4" />
-            )}
+            <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         </div>
       );
