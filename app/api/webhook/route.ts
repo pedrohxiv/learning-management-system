@@ -1,8 +1,9 @@
 import Stripe from "stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+
 import { db } from "@/lib/db";
+import { stripe } from "@/lib/stripe";
 
 export async function POST(request: Request) {
   const body = await request.text();

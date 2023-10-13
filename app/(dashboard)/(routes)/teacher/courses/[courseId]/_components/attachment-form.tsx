@@ -1,17 +1,14 @@
 "use client";
 
 import axios from "axios";
-
 import * as z from "zod";
-
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Attachment, Course } from "@prisma/client";
+import { File, Loader2, PlusCircle, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-
 import { useToast } from "@/components/ui/use-toast";
-import { File, Loader2, PlusCircle, X } from "lucide-react";
-import { useState } from "react";
-import { Attachment, Course } from "@prisma/client";
 import { FileUpload } from "@/components/file-upload";
 
 interface AttachmentFormProps {
@@ -124,7 +121,7 @@ export const AttachmentForm = ({
                       className="ml-auto hover:opacity-75 transition"
                       onClick={() => onDelete(attachment.id)}
                     >
-                      <X className="h-4 w-4" />
+                      <X className="h-4 w-4 text-black" />
                     </button>
                   )}
                 </div>

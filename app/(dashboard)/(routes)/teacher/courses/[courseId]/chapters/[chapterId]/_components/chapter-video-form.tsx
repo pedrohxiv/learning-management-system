@@ -1,18 +1,15 @@
 "use client";
 
 import axios from "axios";
-
 import * as z from "zod";
-
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Chapter, MuxData } from "@prisma/client";
+import { Pencil, PlusCircle, VideoIcon } from "lucide-react";
+import MuxPlayer from "@mux/mux-player-react";
 
 import { Button } from "@/components/ui/button";
-
 import { useToast } from "@/components/ui/use-toast";
-import { ImageIcon, Pencil, PlusCircle, VideoIcon } from "lucide-react";
-import { useState } from "react";
-import { Chapter, Course, MuxData } from "@prisma/client";
-import MuxPlayer from "@mux/mux-player-react";
 import { FileUpload } from "@/components/file-upload";
 
 interface ChapterVideoFormProps {

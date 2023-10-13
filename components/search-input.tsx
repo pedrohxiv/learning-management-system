@@ -2,10 +2,11 @@
 
 import qs from "query-string";
 import { Search } from "lucide-react";
-import { Input } from "./ui/input";
 import { useEffect, useState } from "react";
-import { useDebounce } from "@/hooks/use-debounce";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
+import { Input } from "@/components/ui/input";
+import { useDebounce } from "@/hooks/use-debounce";
 
 export const SearchInput = () => {
   const [value, setValue] = useState("");

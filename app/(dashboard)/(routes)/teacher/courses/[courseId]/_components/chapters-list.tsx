@@ -1,6 +1,5 @@
 "use client";
 
-import { Chapter } from "@prisma/client";
 import { useEffect, useState } from "react";
 import {
   DragDropContext,
@@ -8,10 +7,11 @@ import {
   DropResult,
   Droppable,
 } from "@hello-pangea/dnd";
-
-import { cn } from "@/lib/utils";
 import { Grip, Pencil } from "lucide-react";
+import { Chapter } from "@prisma/client";
+
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 interface ChaptersListProps {
   items: Chapter[];
@@ -94,7 +94,11 @@ export const ChaptersList = ({
                     </div>
                     {chapter.title}
                     <div className="ml-auto pr-2 flex items-center gap-x-2">
-                      {chapter.isFree && <Badge>Free</Badge>}
+                      {chapter.isFree && (
+                        <Badge className="bg-black/80 hover:bg-black/80 hover:opacity-75">
+                          Free
+                        </Badge>
+                      )}
                       <Badge
                         className={cn(
                           "bg-slate-500",
@@ -105,7 +109,7 @@ export const ChaptersList = ({
                       </Badge>
                       <Pencil
                         onClick={() => onEdit(chapter.id)}
-                        className="w-4 h-4 cursor-pointer hover:opacity-75 transition"
+                        className="w-4 h-4 cursor-pointer text-black/80 hover:text-black/80 hover:opacity-75 transition"
                       />
                     </div>
                   </div>

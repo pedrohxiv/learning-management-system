@@ -1,14 +1,15 @@
 import { auth } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
-import { db } from "@/lib/db";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
+
+import { Banner } from "@/components/banner";
 import { IconBadge } from "@/components/icon-badge";
+import { db } from "@/lib/db";
 import { ChapterTitleForm } from "./_components/chapter-title-form";
 import { ChapterDescriptionForm } from "./_components/chapter-description-form";
 import { ChapterAccessForm } from "./_components/chapter-access-form";
 import { ChapterVideoForm } from "./_components/chapter-video-form";
-import { Banner } from "@/components/banner";
 import { ChapterActions } from "./_components/chapter-actions";
 
 const ChapterPage = async ({
@@ -98,7 +99,7 @@ const ChapterPage = async ({
               />
             </div>
             <div className="">
-              <div className="flex gap-x-2">
+              <div className="flex items-center gap-x-2">
                 <IconBadge icon={Eye} />
                 <h2 className="text-xl">Access Settings</h2>
               </div>

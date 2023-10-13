@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
+import { ColumnDef } from "@tanstack/react-table";
+import { Course } from "@prisma/client";
+import { Pencil, ArrowUpDown } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Course } from "@prisma/client";
-import { ColumnDef } from "@tanstack/react-table";
-import { Pencil, ArrowUpDown } from "lucide-react";
-import Link from "next/link";
 
 export const columns: ColumnDef<Course>[] = [
   {
@@ -54,7 +55,8 @@ export const columns: ColumnDef<Course>[] = [
     },
   },
   {
-    accessorKey: "published",
+    accessorKey: "isPublished",
+    enableHiding: false,
     header: ({ column }) => {
       return (
         <div className="flex justify-center">
@@ -69,7 +71,7 @@ export const columns: ColumnDef<Course>[] = [
       );
     },
     cell: ({ row }) => {
-      const isPublished = row.getValue("published") || false;
+      const isPublished = row.getValue("isPublished") || false;
 
       return (
         <div className="flex justify-center">

@@ -6,6 +6,8 @@ import {
   LayoutDashboard,
   ListChecks,
 } from "lucide-react";
+
+import { Banner } from "@/components/banner";
 import { IconBadge } from "@/components/icon-badge";
 import { db } from "@/lib/db";
 import { TitleForm } from "./_components/title-form";
@@ -15,7 +17,6 @@ import { CategoryForm } from "./_components/category-form";
 import { PriceForm } from "./_components/price-form";
 import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
-import { Banner } from "@/components/banner";
 import { Actions } from "./_components/actions";
 
 const CoursePage = async ({ params }: { params: { courseId: string } }) => {

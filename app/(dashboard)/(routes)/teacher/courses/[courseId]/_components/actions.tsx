@@ -1,13 +1,14 @@
 "use client";
 
+import axios from "axios";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Trash } from "lucide-react";
+
 import { ConfirmModal } from "@/components/modals/confirm-modal";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
-import axios from "axios";
-import { Trash } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 interface ActionsProps {
   disabled: boolean;
@@ -97,7 +98,11 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
         {isPublished ? "Unpublish" : "Publish"}
       </Button>
       <ConfirmModal onConfirm={onDelete}>
-        <Button size="sm" disabled={isLoading}>
+        <Button
+          size="sm"
+          disabled={isLoading}
+          className="bg-destructive hover:bg-destructive hover:opacity-75"
+        >
           <Trash className="h-4 w-4" />
         </Button>
       </ConfirmModal>

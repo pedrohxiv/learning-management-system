@@ -1,12 +1,13 @@
 "use client";
 
 import axios from "axios";
-
 import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-
 import { useRouter } from "next/navigation";
+import { Loader2, PlusCircle } from "lucide-react";
+import { Chapter, Course } from "@prisma/client";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,12 +17,9 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { useToast } from "@/components/ui/use-toast";
-import { Loader2, PlusCircle } from "lucide-react";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
-import { Chapter, Course } from "@prisma/client";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
+import { cn } from "@/lib/utils";
 import { ChaptersList } from "./chapters-list";
 
 interface ChaptersFormProps {

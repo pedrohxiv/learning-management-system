@@ -1,9 +1,8 @@
 "use client";
 
-import { UploadDropzone } from "@/lib/uploadthing";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
-
-import { useToast } from "./ui/use-toast";
+import { useToast } from "@/components/ui/use-toast";
+import { UploadDropzone } from "@/lib/uploadthing";
 
 interface FileUploadProps {
   onChange: (url?: string) => void;
